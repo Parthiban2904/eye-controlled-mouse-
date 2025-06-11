@@ -1,0 +1,11 @@
+import pyautogui
+
+def move_cursor_from_landmarks(landmarks, frame_w, frame_h, screen_w, screen_h):
+    for id, landmark in enumerate(landmarks[474:478]):
+        x = int(landmark.x * frame_w)
+        y = int(landmark.y * frame_h)
+
+        if id == 1:
+            screen_x = screen_w / frame_w * x
+            screen_y = screen_h / frame_h * y
+            pyautogui.moveTo(screen_x, screen_y)
